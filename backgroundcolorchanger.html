@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Background Color Changer</title>
+ <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+
+</head>
+<body>
+<h2 class="text-center font-serif font-bold text-xl mt-12">Background Color Changer</h2>
+<div class="text-center mt-6 transition delay-100 duration-200 ease-in-out">
+    <p class="text-gray-700 text-center">Click a button to change the background color:</p>
+    <button class="bg-blue-500 text-white px-4 py-2 rounded mt-6 cursor-pointer  " id="colorbtn">Click me for Magic</button>
+   
+</div>  
+<script>
+
+    function setmoodlight() {
+         let colors = ['blue', 'green', 'orange', 'coral'];
+    let index = 0;
+    return function changeBackgroundColor() {
+    
+     document.body.style.backgroundColor = colors[index];
+index = index + 1;
+
+if (index === colors.length){
+  index = 0;
+    }
+      };
+    }
+    const changeBackgroundColor = setmoodlight();
+    const colorbtn = document.querySelector("#colorbtn");
+colorbtn.addEventListener("click", changeBackgroundColor);
+
+</script>
+</body>
+</html>
